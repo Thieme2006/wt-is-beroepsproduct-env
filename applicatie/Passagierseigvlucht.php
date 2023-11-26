@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Passagier Portaal/Mijn vluchten</title>
+    <link rel="stylesheet" href="CSS/styles.css">
+</head>
+
+<body>
+    <header>
+        <section class="header">
+            <nav>
+                <a href="Homepage.php">
+                    <img class="Logo" src="Images/Airport_logo.png" alt="">
+                </a>
+                <h2>Passagiers Portaal</h2>
+                <div class="nav_item">
+                    <ul>
+                        <li><a href="Homepage.php">HOME</a></li>
+                        <li><a href="Vluchten.php">VLUCHTEN</a></li>
+                        <li><a href="Parkeerplaats.php">PARKEREN</a></li>
+                        <li><a href="#">PLATTEGROND</a></li>
+                        <li>Mitch</li>
+                        <li><a href="Homepage.php">Uitloggen</a></li>
+                        <li><a href="#">EN | NL</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </section>
+    </header>
+    <main>
+        <div class="flex-box-Medewerker">
+            <div class="flex-box-medewerker_menu">
+                <a href="Passagiersportaal.php">Homepage</a>
+                <a href="Vluchten.php">Vlucht overzicht</a>
+                <a href="Passagierseigvlucht.php">Mijn Vluchten</a>
+                <a href="BagageinvoerPass.php">Bagage inchecken</a>
+            </div>
+            <div>
+                <h1 class="box">Mijn vluchten</h1>
+                <div class="eigenvlucht">
+                    <a href="VluchtenDetailpag.php">
+                        <h2>GLR - BER Departs at 10:10</h2>
+                        <p>KLM Flights</p>
+                        <p>Departs from gate 2</p>
+                        <p>Vluchtnummer: 1234KLM</p>
+                        <p>Passagiernummer: K1234567</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <a href="Privacyverklaring.php">Privacyverklaring</a>
+        <p>Contact</p>
+    </footer>
+</body>
+
+</html>

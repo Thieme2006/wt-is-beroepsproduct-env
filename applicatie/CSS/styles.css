@@ -1,0 +1,288 @@
+/*-----------------------ALGEMEEN---------------------------*/
+* {
+    margin: 0;
+    padding: 0;
+}
+
+header .nav_item ul li:after,
+main .Vluchten {
+    margin: auto;
+}
+
+a,
+main .nav_item ul li a,
+main .LoginContainer a,
+main .flex-box-medewerker_menu a {
+    text-decoration: none;
+}
+
+a,
+main .nav_item ul li a,
+main .LoginContainer a,
+main .flex-box-medewerker_menu a,
+main .LoginContainer a {
+    color: black;
+}
+
+main .box,
+main .eigenvlucht,
+main .flex-box-medewerker_menu a,
+main .flex-box-Medewerker>div,
+main .Vluchten .row .Vlucht-col {
+    border: 1px solid black;
+}
+
+/*------------------------HEADER-----------------------------*/
+
+header {
+    min-height: 10rem;
+    max-height: 10.5rem;
+    width: 100%;
+    background-color: #3185FC;
+}
+
+.Logo {
+    max-height: 10rem;
+    max-width: 10rem;
+}
+
+/*Het maken van de navigatie bovenin het scherm*/
+section nav {
+    display: flex;
+    padding: 2% 6%;
+    justify-content: space-between;
+}
+
+.nav_item {
+    flex: 1;
+    text-align: right;
+}
+
+.nav_item ul li {
+    list-style: none;
+    display: inline-block;
+    padding: 0.2rem 0.3rem;
+    position: relative;
+}
+
+.nav_item ul li a {
+    font-size: 13px;
+}
+
+header .nav_item ul li:after {
+    content: '';
+    width: 0%;
+    height: 2px;
+    background: red;
+    display: block;
+    transition: 0.5s;
+}
+
+.nav_item ul li:hover:after {
+    width: 100%;
+}
+
+/*het veranderen van de fontsize bij het kleiner maken van het scherm*/
+@media(max-width:700px) {
+    .nav_item ul li a {
+        font-size: 9px;
+    }
+}
+
+/*----------------------------MAIN---------------------------*/
+main .WelkomTekst,
+.main .DoorverwijzingInlog,
+main .DoorverwijzingInlog,
+main .center,
+main .flex-box-medewerker_menu,
+main .flex-box-Medewerker_invoer,
+main .flex-box-Medewerker>div,
+main .Vluchten,
+main section h1 {
+    text-align: center;
+}
+
+main {
+    padding-top: 4rem;
+    background-color: #34E5FF;
+    min-height: 30rem;
+}
+
+main h1,
+main .Inloggen,
+main .Vluchten h1 {
+    font-size: 50px;
+}
+
+main h2 {
+    font-size: 30px;
+}
+
+main section nav,
+main .LoginContainer,
+main .center,
+main .flex-box-medewerker_menu,
+main .flex-box-Medewerker_invoer,
+main .Inlogborder,
+main .Vluchtmenu,
+main .Vluchtenmenu,
+main .flex-box-Medewerker,
+main .Vluchten .row,
+main .flex-box-Vluchtbeschrijving {
+    display: flex;
+}
+
+main .LoginContainer,
+main .Vluchten .row {
+    justify-content: space-around;
+}
+
+main .LoginContainer {
+    list-style: none;
+}
+
+main .LoginContainer a {
+    background-color: white;
+}
+
+main .Inloggen {
+    display: block;
+}
+
+main .Inlogborder,
+main .flex-box-Medewerker {
+    justify-content: center;
+}
+
+main .DoorverwijzingInlog,
+main .LoginContainer a {
+    padding: 2rem;
+}
+
+main section nav,
+main .center,
+main .flex-box-medewerker_menu,
+main .flex-box-Medewerker_invoer,
+main .Inlogborder,
+main .Vluchtmenu,
+main .Vluchtenmenu {
+    align-items: center;
+}
+
+.center,
+.flex-box-medewerker_menu,
+.flex-box-Medewerker_invoer,
+.Inlogborder,
+.Vluchtmenu,
+.Vluchtenmenu {
+    flex-direction: column;
+}
+
+.Vluchtmenu {
+    max-width: 20%;
+}
+
+.flex-box-medewerker_menu a {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+}
+
+.flex-box-Medewerker_invoer {
+    max-width: 100%;
+    margin-right: 10rem;
+}
+
+.flex-box-Medewerker {
+    max-width: 95%;
+}
+
+.flex-box-Medewerker>div {
+    margin-left: 2rem;
+}
+
+.Vluchten {
+    justify-content: right;
+    width: 70%;
+    padding-top: 1rem;
+}
+
+.Vluchten .row {
+    margin-top: 5%;
+}
+
+main .LoginContainer a,
+.Vluchten .row .Vlucht-col {
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+.Vluchten .row .Vlucht-col {
+    background: #fff3f3;
+    margin-bottom: 5%;
+    padding: 20px 12 px;
+}
+
+main .box {
+    margin-bottom: 0.5rem;
+    margin-right: 10rem;
+}
+
+
+/* Vlucht kollom foto (de foto bij de vlucht informatie)*/
+main .Vlucht-col img {
+    max-height: 5rem;
+    max-width: 5rem;
+}
+
+main .flex-box-Vluchtbeschrijving .Vluchtenmenu img {
+    max-width: 20rem;
+}
+
+main .Parkeerplaatsfoto {
+    max-width: 80%;
+}
+
+@media(max-width: 700px) {
+    main h1 {
+        font-size: 20px;
+    }
+
+    main h2 {
+        font-size: 12px;
+    }
+
+    main .LoginContainer li {
+        padding: 0.5rem;
+    }
+
+    main .Inloggen {
+        font-size: 30px;
+    }
+
+    main .LoginContainer a,
+    .Vluchten .row .Vlucht-col {
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+
+    .Vluchten .row {
+        flex-basis: 31%;
+        background: #fff3f3;
+        margin-bottom: 2%;
+        padding: 10px 6 px;
+    }
+
+    main .flex-box-Medewerker .Vluchtenmenu img .BestemmingsfotoG {
+        max-width: 10rem;
+    }
+}
+
+/*---------------------------------FOOTER-------------------------*/
+footer {
+    padding-top: 0.5rem;
+    padding-left: 2rem;
+    min-height: 5rem;
+    background-color: #3185FC;
+}
