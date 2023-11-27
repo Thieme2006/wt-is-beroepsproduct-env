@@ -12,7 +12,7 @@
     <header>
         <section class="header">
             <nav>
-                <a href="Homepage.html">
+                <a href="Homepage.php">
                     <img class="Logo" src="Images/Airport_logo.png" alt="">
                 </a>
                 <h2>Medewerker Portaal</h2>

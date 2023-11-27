@@ -35,7 +35,7 @@
             <div class="flex-box-medewerker_menu">
                 <a href="Medewerkerportaal.php">Homepage Medewerker</a>
                 <a href="Vluchtenoverzicht.php">Vlucht overzicht</a>
-                <a href="Vluchtinvoer.html">Vlucht invoeren</a>
+                <a href="Vluchtinvoer.php">Vlucht invoeren</a>
                 <a href="Passagierinvoeren.php">Passagier invoeren</a>
                 <a href="Bagage_invoeren.php">Bagage invoeren</a>
             </div>
