@@ -17,6 +17,7 @@ $verschil = $vandaag->diff($target);
 
 $sintdatum = date_diff($vandaag, $target);
 $datum = $vandaag->format('d-m-Y');
+$omschrijving = $sintdatum = GEENDATUM;
 
 
 
@@ -24,3 +25,4 @@ $datum = $vandaag->format('d-m-Y');
     ?> 
 </body>
 </html>
+
