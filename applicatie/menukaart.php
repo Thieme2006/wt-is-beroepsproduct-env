@@ -1,18 +1,27 @@
 <?php
 
-$menu = array(
-    'Eten' ["Burgers" => 5.50, "Patat" => 6.34];
-    'Drinken' ["Cola" => 7.50]
-)
+$menu = [
+  "Eten" => [
+    "Shoarma" => 6.51,
+    "Appels" => 10.95,
+    "Terbouleh" => 8.95,
+  ],
+  "Drinken" => [
+    "Cola" => 2.00,
+    "Argran" => 2.30,
+    "Fernandes" => 2.60,
+    "Bier" => 5.50,
+  ]
+  ];
 
-foreach($menu as $menu_item => Bron)
+foreach($menu as $menu_item => $row)
 {
-echo 1menu_item
+echo $menu_item . "<br>";
 foreach($row as $naam => $prijs)
 {
-    echo $naam " " $prijs
+    echo $naam . " " . $prijs . "<br>";
 }
-}
+};
 
 ?>
 
