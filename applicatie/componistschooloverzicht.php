@@ -10,7 +10,6 @@ $data = $db->query($query);
 $html_table = '<table>';
 $html_table = $html_table . '<tr><th>c.naam</th><th>c.geboortedatum</th><th>Schoolnaam</th><th>m.plaatsnaam</th></tr>';
 
-
 // HUISWERK OPDRACHT 1 -----------------------------
 while($rij = $data->fetch()) {
     $C_naam = $rij['naam'];
@@ -19,7 +18,6 @@ while($rij = $data->fetch()) {
     $plaatsnaam = $rij['plaatsnaam'];
     $html_table = $html_table . "<tr><td>$C_naam</td><td>$geboortedatum</td><td>$M_naam</td><td>$plaatsnaam</td></tr>";
 }
-
 
 $html_table = $html_table . "</table>";
 ?>
