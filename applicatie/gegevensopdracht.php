@@ -3,6 +3,7 @@
 require_once 'db_connectie.php';
 function maakDatabase()
 {
+    $fouten = [];
     $db = maakVerbinding();
 
     if (isset($_POST['componistId']) && isset($_POST['naam']) && isset($_POST['geboortedatum']) && isset($_POST['schoolId'])) {
@@ -13,19 +14,52 @@ function maakDatabase()
         $sql = 'INSERT INTO componist (componistId, naam, geboortedatum, schoolId)
      VALUES (:componistId, :naam, :geboortedatum, :schoolId)';
      
+
+     if (empty($componistId)) {
+        $fouten[] = 'ComponistId is verplicht om in te vullen.';
+    }
+    
+    if (!is_numeric($componistId)) {
+        $fouten[] = 'ComponistId moet een numerieke waarde zijn.';
+    }
+    
+    // Naam (not null, text)
+    if (empty($naam)) {
+        $fouten[] = 'Naam is verplicht om in te vullen.';
+    }
+
+    if(preg_match('/^[a-zA-Z]+/',$naam)){
+        $fouten[] = 'Naam mag geen nummers bevatten.';
+    }
+    
      if(empty($geboortedatum)){
          $geboortedatum = null;
      }
     if (empty($schoolId)){
          $schoolId = null;
      }
+
+     if (count($fouten) > 0) {
+        // Fouten: maak een melding
+        $melding = '<ul class="error">';
+    
+        foreach($fouten as $fout)
+        {
+            $melding .= '<li>'.$fout.'</li>';
+    
+        }
+        $melding .= '</ul>';
+    } else
+    {
         $gegevensInvoeren = $db->prepare($sql);
         $gegevensInvoeren->execute(['componistId' => $componistId, 'naam' => $naam, 'geboortedatum' => $geboortedatum, 'schoolId' => $schoolId]);
         $melding = 'Er ging iets fout met het invoeren van de gegevens.';
 
         if($gegevensInvoeren){
             $melding = 'De gegevens zijn succesvol ingevoerd.';
-        }
+        }   
+     }
+
         echo $melding;
     }
 
@@ -68,7 +102,6 @@ function maakTabel() {
             padding: 10px 20px 10px 50px;
             border: 1px solid black;
         }
-
         table {
             border-collapse: collapse;
         }
