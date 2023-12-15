@@ -5,12 +5,22 @@ require_once 'db.connectie.php';
 $melding = '';
 $fouten = [];
 
+$componistId = '';
+        $naam = '';
+        $geboortedatum = '';
+        $schoolId='';
+
+$query = "SELECT schoolId, naam FROM Muziekschool";
+$query = $verbinding->prepare($query);
+$result = $query->execute();
+$scholen = $query->fetchAll(PDO::FETCH_ASSOC);
 
 if(isset($_POST['opslaan'])){
-    $naam           = $_POST['naam'];
-    $geboortedatum  = $_POST['geboortedatum'];
-    $schoolId       = $_POST['schoolId'];
-    $componistId    = $_POST['componistId'];
+    $componistId    = htmlspecialchars(trim($_POST['componistId']));
+    $naam           = htmlspecialchars(strip_tags(trim($_POST['naam'])));
+    $geboortedatum  = htmlspecialchars(trim($_POST['geboortedatum']));
+    $schoolId       = htmlspecialchars(trim($_POST['schoolId']));
+
 
     // Controleer op lege velden en valideer componistId
     if (empty($componistId)) {
@@ -106,16 +116,23 @@ if(isset($_POST['opslaan'])){
 <body>
     <form action="#" method="post">
         <label for="naam">Naam</label>
-        <input type="text" id="naam" name="naam" values = "<?= $naam ?>" required><br>
+        <input type="text" id="naam" name="naam" value = "<?= $naam ?>" required><br>
 
         <label for="geboortedatum">Geboortedatum</label>
         <input type="date" id="geboortedatum" name="geboortedatum" value = "<?= $geboortedatum ?>"><br>
 
         <label for="schoolId">School ID</label>
-        <input type="text" id="schoolId" name="schoolId" value = "<?= $schoolId ?>" ><br>
+        <select id="schoolId" name="schoolId">
+        <option value="">--- Kies een school ---</option>
+
+        <?php foreach($scholen as $school) { 
+        echo '<option value="' . $school["id"] . '">' . $school["naam"] . '</option>';        }
+        ?>
+
+    </select>
 
         <label for="componistId">Componist ID</label>
-        <input type="text" id="componistId" name="componistId" value = " <?= $componistId ?>"required><br>
+        <input type="text" id="componistId" name="componistId" value = "<?= $componistId ?>" required><br>
 
         <input type="reset" id="reset" name="reset" value="Wissen">
         <input type="submit" id="opslaan" name="opslaan" value="Opslaan">
