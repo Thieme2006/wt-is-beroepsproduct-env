@@ -89,7 +89,7 @@ function maakTabel() {
 
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -109,7 +109,29 @@ function maakTabel() {
     <title>Titels</title>
 </head>
 <body>
-    <a href="zoekpagina.php">Terug</a>
+<style>
+    form{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    input{
+        margin: auto 1rem;
+    }
+</style>
+<h1>Muziek database</h1>
+    <form action="gegevensopdracht.php" method="post">
+        <label for="componistId">ComponistId
+        <input type="text" placeholder="ComponistID" id="componistId" name="componistId" value="<?= $componistId ?>">
+</label>
+<label for="">Naam
+        <input type="text" placeholder="naam" id="naam" name="naam" value="<?= $naam?>" required>
+        </label>
+        <input type="date" placeholder="geboortedatum" id="geboortedatum" name="geboortedatum" value="<?= $geboortedatum?>">
+        <input type="text" placeholder="schoolId" id="schoolId" name="schoolId" value="<?= $schoolId?>">
+        <input type= "reset" id="reset" name="reset" value="reset">
+        <input type="submit" id="opslaan" name="opslaan" value="opslaan">
+    </form>
         <?php
         echo (maakTabel());
         ?>
